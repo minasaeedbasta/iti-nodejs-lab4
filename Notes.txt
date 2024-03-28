@@ -1,0 +1,99 @@
+Day 1 : Inatialization ans setting using npm
+Day 2 : Open ther server and create endPoints
+Day 3 : create routes objects 
+Day 4 : Connection DB    (ODM  mongoose)
+
+
+
+Search 
+(ORM for sql [codeFirst,DBFirst])
+
+
+/************* day2**********************/
+1- Node act as web application --> response html pages 
+2- Node act as Restfull API    --> response data (JSON)
+
+
+Build MVC Model :
+1- Model Folder : js files that conatin Schema for each entity
+2- Controller Folder: js files that hold crud operations for each entity (communicate Model Files)
+3- Routes Folder : js files that conatin endPoints for Ecah entity
+
+
+//  endPoints (Routes)
+Rules as Restful API
+as front send http request :
+    1- url 
+    2- method
+    3- body
+
+Entity Student Endpoints(Routes)
+1- get all students data
+  url: http://domainName/students
+  method: get
+  return [{},{},{},{}]
+2- insert Student
+  url:http://domainName/students
+  method: post
+  body: data
+3- update Student
+   url:http://domainName/students
+   method: patch
+   body: data
+
+4- delete Student
+   url:http://domainName/students?id=3
+   method: delete
+
+5- get one student
+   url:http://domainName/students/5
+   method: get
+// Need  afront End Tool For testing (POSTMAN)
+
+/********************** Day3 ********************/
+1- create routes objects (route anf controller file)
+2- How does client send data to the server ?
+   1- queryString   (get,post,patch,delete)
+      http://lcalhost:8080/students?id=1&name=eman
+
+      inside express add extension property on request object (query)
+
+
+   2- query parameters(get,post,patch,delete)
+      http://lcalhost:8080/students/1/eman
+      request.params
+
+   3- http body   (post,patch,delete)
+
+      request.body
+
+//***********  express-validator , Joi
+
+
+
+/*************** Day4 ******************/
+
+1- npm i mongoose
+2- app.js  --> setup connection string then open the connection
+3- Model file generatre schema for each entity
+4- Controller file to generate crud operations
+
+
+
+
+/****************************************/
+class Products: List<product>{}   --> table
+
+class product{
+   int productId;
+   strig productName;
+}
+
+// commnication  Products
+Products.select()  // select * from products
+
+products.add(new Product(1,"xxx",price))// insert into products value()
+
+
+
+
